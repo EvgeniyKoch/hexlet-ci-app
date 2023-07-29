@@ -1,6 +1,6 @@
 name: ci-app
 
-on: push
+on: [push]
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'npm'
-          cache-dependency-path: 'package-lock.json'
+
       - uses: snyk/actions/nodev3
         with:
           env:
