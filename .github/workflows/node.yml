@@ -15,7 +15,7 @@ jobs:
         with:
           args: --severity-threshold=high
         env:
-          SNYK_TOKEN: ${{ secrets.hexlet-ci-app.SNYK_TOKEN }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Install app
         run: make install
