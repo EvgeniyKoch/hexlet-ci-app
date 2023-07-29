@@ -13,7 +13,7 @@ jobs:
 
       - uses: snyk/actions/node@v3
         env:
-          SNYK_TOKEN: ${{ secret.SNYK_TOKEN }}
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Install app
         run: make install
