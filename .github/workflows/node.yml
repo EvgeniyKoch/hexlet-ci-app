@@ -6,14 +6,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           cache: 'npm'
 
       - uses: snyk/actions/node@master
+        with:
+          args: --severity-threshold=high
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          SNYK_TOKEN: ${{ secrets.hexlet-ci-app.SNYK_TOKEN }}
 
       - name: Install app
         run: make install
